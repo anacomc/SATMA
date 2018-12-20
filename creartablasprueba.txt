@@ -1,0 +1,27 @@
+
+CREATE TABLE TFactura
+(   fac_numero   numeric(8) not null,
+    fac_control  numeric(8) not null,
+    fac_fecha    date,    
+	fac_fechafull datetime,
+	fac_base decimal(12,2),
+	fac_excento decimal(12,2),
+	fac_piva decimal(6,2),
+	fac_iva decimal(10,2),
+	fac_total decimal(12,2)
+    CONSTRAINT TFactura_pk PRIMARY KEY (fac_numero)
+);
+
+CREATE TABLE TDetalle
+(    det_numero    numeric(8)    not null,
+     det_item numeric (15),
+     det_monto decimal(12,2),
+	 det_cantidad decimal(10,2)
+    CONSTRAINT fk_TFactura
+      FOREIGN KEY (fac_numero)
+     REFERENCES TFactura(fac_numero)
+     ON DELETE CASCADE
+);
+
+--Esta linea permite eliminar el registor maestro
+DELETE FROM TFactura WHERE fac_numero = 1

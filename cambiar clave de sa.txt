@@ -1,0 +1,9 @@
+net stop mssqlserver$sqlexpress
+sqlcmd -s gerencia\sqlexpress
+alter login sa with password = '123456';
+or
+create login gerencia\usuario from windows;
+or
+alter server role sysadmin add member gerencia\usuario;
+
+net start mssqlserver$sqlexpress

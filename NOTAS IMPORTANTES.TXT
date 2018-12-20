@@ -1,0 +1,84 @@
+Existen en la base de datos Anaco_Tributos 6 vistas (views)
+que accesan la información contenida en otras Bases de Datos
+
+Las vistas son las siguientes:
+
+.Actividades
+.Inmuebles_urbanos
+.Patentes
+.TsInmueble
+.TsttContribuyente
+.Vehiculos
+
+Habria que revisar si de ellas se obtiene información que afecte directamente
+a los montos cobrados.
+
+Por lo pronto sólo enfocarse en la reconversion de Anaco_Tributos.
+
+
+--- VEHICULOS
+**************************************************************************
+Anaco_Saphiro.dbo.[RECA_Query_Result_(ultima)]
+SELECT     patente, cod_con
+FROM         Anaco_Saphiro.dbo.[RECA_Query_Result_(ultima)]
+**************************************************************************
+
+--- PATENTES
+**************************************************************************
+Anaco_Saphiro.dbo.RECA_Query_Result_2
+SELECT     n_patente, rif
+FROM         Anaco_Saphiro.dbo.RECA_Query_Result_2
+*************************************************************************
+
+--- INMUEBLES URBANOS
+*************************************************************************
+Anaco_Saphiro.dbo.[RECA_Query_Result_(2)]
+SELECT     patente, cod_con
+FROM         Anaco_Saphiro.dbo.[RECA_Query_Result_(2)]
+*************************************************************************
+
+--- ACTIVIDADES ---
+*************************************************************************
+Anaco_Saphiro.dbo.RECA_actividades
+SELECT     n_patente, cod_actividad
+FROM         Anaco_Saphiro.dbo.RECA_actividades
+*************************************************************************
+
+--- TSTTCONTRIBUYENTE
+*************************************************************************
+SIREDI_INM_URB.dbo.TstttContribuyente: CAPITAL
+
+SELECT     id, RIF, NIT, NOMBRE, EMAIL, web, FAX, TELEFONO, celular,
+           COD_ESTADO, COD_MUNI, COD_PARRO, COD_URBA, COD_CALLE, COD_VERE, 
+           NRO_CIVI, DIRECCION, capital, st2, fechacreacion, 
+           fechaactualizacion, taqucreacion, taquactiua, id_prov
+FROM SIREDI_INM_URB.dbo.TstttContribuyente
+*************************************************************************
+
+--- TSINMUEBLE
+************************************************************************
+SIREDI_INM_URB.dbo.TsInmueble: VALOR_CONST, VALOR_AMPLIA, Valor_depre
+
+SELECT id, RIF, CATASTRO, CUENTA_NVA, CUENTA, TIPO_INM, TIP_Edif, Tip_Uso, 
+       Tip_prop, COD_EST, COD_MUN, COD_URB, COD_CALLE, COD_CIUD,COD_PARR, COD_VERE, 
+       DIR_COMPL, SECTOR, MANZANA, PARCELA, BLOQUE, PISO, APTO, UNIDAD, 
+       VALOR_TERR, AREA_TERR, VALOR_CONST, AREA_CONST, VALOR_AMPLIA, AREA_AMPLIA, 
+       Valor_depre, FECHA_REG_MER, FECHA_INSCR, ULT_AVAL, INMUEBLE, COBEXT, 
+       Fecha_Demolicion, Fec_Tra_PC, Permiso
+FROM SIREDI_INM_URB.dbo.TsInmueble
+*****************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

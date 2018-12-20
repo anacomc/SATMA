@@ -1,0 +1,2 @@
+BACKUP DATABASE [misPruebas] TO DISK='M:\SQL2005\BackupSet001.bak';
+GO

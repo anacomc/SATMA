@@ -1,0 +1,3 @@
+*** Crear una tarea que ejecute el respaldo cada media hora
+*** para tener el log respaldado al pelo
+sqlcmd -S W2003SQL-E962EB -i S:\BAKCUP\BackupLog.sql -o S:\BAKCUP\errorLog.txt
